@@ -1,0 +1,30 @@
+{
+  "name": "folder-structure-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server/index.js",
+    "dev": "nodemon --watch server --exec ts-node --files server/index.ts",
+    "build": "rm -rf dist && tsc",
+    "predeploy": "npm run build",
+    "deploy": "netlify deploy --dir=dist/server --prod",
+    "postdeploy": "netlify functions:deploy --dir=dist/server --prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.10.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.17",
+    "@types/mongoose": "^5.11.97",
+    "nodemon": "^2.0.20"
+  }
+}
